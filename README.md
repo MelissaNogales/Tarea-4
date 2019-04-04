@@ -27,13 +27,13 @@ class B: A
    {
         b = 15;
    }
-}
 
- //#Redefine el método Display( ) en este espacio,  debe regresar el campo b como string.
-public override string Display()
+    //#Redefine el método Display( ) en este espacio,  debe regresar el campo b como string.
+    public override string Display()
    {
        Console.WriteLine("{0}");
    }
+}
 
 class Program
 {
