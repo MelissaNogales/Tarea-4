@@ -52,7 +52,7 @@ class Program
 
 ### _1.2. Redefine el método Display en el espacio indicado,_
 ###      _Una vez redefinido el método, ¿qué valores imprimen las lineas (1) y (2)?._
-####     _10 y 15.
+####     _10 y 15._
 
 ### _1.3. ¿Que palabra debes agregar en la linea (public _______ string Display()) al definir A.Display()?_
 #### _virtual_
