@@ -173,7 +173,7 @@ class Program
 ### _2.1. Completa el programa._
 
 ### _2.2. Hay un error en uno de los puntos (A)(B)(C)(D). ¿Cuál es y por qué?_
-####      _Ninguno_
+####      _(A) void, porque sino no pueder redifinirlo y poner return._
 
 #### _2.3. ¿Qué método se debe implementar obligatoriamente en ambas clases y por qué?_
 ####        _Afina, porque es abstracto._
