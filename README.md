@@ -13,7 +13,7 @@ class A
         a = 10;
     }
 
-    public _______ string Display()
+    public virtual string Display()
     {
       return a.ToString();
     }
@@ -130,8 +130,8 @@ class Guitarrista: Musico, ISaluda, IHobby
       return "Guitarra afinada";
     }
 
-      // Falta el constructor y otras cosas??
-      //Si
+    // Falta el constructor y otras cosas??
+    //Si
 
     public void Saluda()
     {
@@ -153,17 +153,17 @@ class Program
         Bajista b = new Bajista("Flea");
         Guitarrista g = new Guitarrista("Santana");
 
-        Musico [] m = ____________________
+        Musico [] m = new Musico[2];
 
         m[0] = b;
         m[1] = g;
 
         foreach (Musico mu in musicos)
-            {
-                Console.WriteLine(mu.Afina());
-            }
+        {
+            Console.WriteLine(mu.Afina());
+        }
 
-            Console.WriteLine(m.Afina());
+        Console.WriteLine(m.Afina());
 
         Console.ReadKey();
     }
