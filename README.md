@@ -72,7 +72,7 @@ using System.Collections.Generic;
         nombre = n;
       }
 
-      public abstract (A) void Afina();  (B)
+      public abstract (A) Afina();  (B)
 
       public (C) string Display()
       { 
