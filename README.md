@@ -13,32 +13,34 @@ class A
     a = 10;
   }
 
-  public virtual string Display()
+  public _______ string Display()
   {
     return a.ToString();
   }
 }
 
-class B: A
+class B:A
 {
   public int b;
 
-  public B(): base()
+  public B():base()
   {
     b = 15;
   }
 
-  //#Redefine el método Display( ) en este espacio,  debe regresar el campo b como string.
+  //  #  Después de contestar la pregunta 1                  
+
+  //   #  Redefine el método Display( ) en este espacio,  debe regresar el campo b como string.
   public override string Display()
   {
-    Console.WriteLine("{0}");
+    return b.ToString();
   }
 }
 
-class Program
-{
-   public static void Main()
-   {
+ class Program
+  {
+    public static void Main()
+    {
       A objA = new A();
       B objB = new B();
 
@@ -63,115 +65,152 @@ class Program
 using System;
 using System.Collections.Generic;
 
- abstract class Musico
-    {
-      public string nombre;
-
-      public Musico (string n)
-      {
-        nombre = n;
-      }
-
-      public abstract (A) Afina();  (B)
-
-      public (C) string Display()
-      { 
-        return nombre;
-      }
-    }
-
-interface ISaluda
+ ________ class Musico
 {
-  void Saluda();
+  public string nombre;
+
+  public Musico (string n)
+  {
+    nombre = n;
+  }
+
+  public abstract (A) void Afina();  (B)
+
+  public (C) string Display()
+  { 
+    return nombre;
+  }
 }
 
-interface IHobby
-{
-  void Hobby();
-}
-
-class Bajista: Musico, ISaluda, IHobby
+class Bajista; Musico
 {
   public string instrumento;
 
-  public Bajista (string n, string i ) 
-  {
-    this.nombre = n;
-    this.instrumento = i;
-  }
+  public Bajista (string n, string i ) ......
 
-  public override Afina()
-  {
-    return "Bajo afinado";
-  }
+  .........
 
-  public void Saluda()
+  public _________ Afina()
   {
-    Console.WriteLine("Hola soy bajista");
-  }
-
-  public void Hobby()
-  {
-    Console.WriteLine("Me gusta tocar el bajo");
+   ________________
   }
 }
 
-class Guitarrista: Musico, ISaluda, IHobby
+class Guitarrista ____________
 {
   public instrumento;
 
-  public Guitarrista (string n, string i ) 
-  {
-    this.nombre = n;
-    this.instrumento = i;
-  }
-
-  public override Afina()
-  {
-    return "Guitarra afinada";
-  }
-
   // Falta el constructor y otras cosas??
-  //Si
-
-  public void Saluda()
-  {
-    Console.WriteLine("Hola soy guitarrista");
-  }
-
-  public void Hobby()
-  {
-    Console.WriteLine("Me gusta tocar la guitarra");
-  }
 }
- 
+
 class Program
 {
   public static Main()
-   {
-      Musico m = new Musico("Django"); (D)
+  {
+    Musico musico = new Musico("Django"); (D)
 
-      Bajista b = new Bajista("Flea");
-      Guitarrista g = new Guitarrista("Santana");
+    Bajista b = new Bajista("Flea");
+    Guitarrista g = new Guitarrista("Santana");
 
-      Musico [] m = new Musico[2];
+    List<Musico> musicos = ____________________
 
-      m[0] = b;
-      m[1] = g;
+    musicos.Add( b);
+    musicos.Add(g);
 
-      foreach (Musico mu in musicos)
-      {
-        Console.WriteLine(mu.Afina());
-      }
+    foreach ( _____in musicos______)
+          ____________________
 
-      Console.WriteLine(m.Afina());
+    // (m as IAfina).Afina()
 
-      Console.ReadKey();
-    }
+    Console.ReadKey();
+
+  }
 }
 ```
 
 ### _2.1. Completa el programa._
+```csharp
+using System;
+using System.Collections.Generic;
+
+namespace Musico
+{
+  abstract class Musico
+  {
+    public string nombre;
+
+    public Musico (string n)
+    {
+      nombre = n;
+    }
+
+    public abstract /*(A)*/ string Afina();  /*(B)*/
+
+    public /*(C)*/ string Display()
+    { 
+      return nombre;
+    }
+  }
+
+class Bajista: Musico
+{
+  public string instrumento;
+
+  public Bajista (string n, string instrumento):base(n)
+  {
+    this.instrumento = instrumento;
+  }
+
+  public override string Afina()
+  {
+    return String.Format("Mi bajo está afinado", nombre);
+  }
+}
+
+class Guitarrista: Musico
+{
+  public string instrumento;
+
+  // Falta el constructor y otras cosas??
+  //si
+
+  public Guitarrista (string n, string instrumento):base(n)
+  {
+    this.instrumento = instrumento;
+  }
+
+  public override string Afina()
+  {
+    return String.Format("La guitarra está afinada", nombre);
+  }
+}
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //Musico musico = new Musico("Django"); (D)
+
+      Bajista b = new Bajista("Flea", "bajo");
+      Guitarrista g = new Guitarrista("Santana", "guitarra");
+
+      List<Musico> musicos = new List<Musico>();
+
+      musicos.Add(b);
+      musicos.Add(g);
+
+       foreach(Musico mu in musicos)
+        {
+          Console.WriteLine(mu.Afina());
+        }
+
+      // (m as IAfina).Afina()
+
+      Console.ReadKey();
+    }
+  }
+}
+```
 
 ### _2.2. Hay un error en uno de los puntos (A)(B)(C)(D). ¿Cuál es y por qué?_
 ####      _(D) Las clases abstractas no se pueden instanciar._
@@ -180,9 +219,94 @@ class Program
 ####        _Afina, porque es abstracto._
 
 #### _2.4. ¿Por qué no se ponen las llaves en (B)?, ¿Cuando si se pondrían?_
-####        _Porque la clase no puede hacer ese método, las llaves se ponen cuando hay bloque de instruciones y los métodos son virtuales._
+####        _Porque la clase no puede hacer ese método y  las llaves se ponen cuando hay bloque de                      instruciones y los métodos son virtuales._
 
 #### _2.5. ¿Qué pasa si el método Afina() lo hacemos virtual en lugar de abstract?_
 ####        _Marcaría error._
 
 #### _3. Implementa el programa utilizando interfaces en lugar de herencia._
+```csharp
+using System;
+using System.Collections.Generic;
+
+namespace Musico
+{
+  abstract class Musico
+  {
+    public string nombre;
+
+    public Musico (string n)
+    {
+      nombre = n;
+    }
+
+    public /*(C)*/ string Display()
+    { 
+      return nombre;
+    }
+  }
+
+  interface IAfina
+  {
+    void IAfina();
+  }
+
+class Bajista: Musico, IAfina
+{
+  public string instrumento;
+
+  public Bajista (string n, string instrumento):base(n)
+  {
+    this.instrumento = instrumento;
+  }
+
+  public void IAfina()
+  {
+      Console.WriteLine("Se afina el bajo");
+  }
+}
+
+class Guitarrista: Musico, IAfina
+{
+  public string instrumento;
+
+  // Falta el constructor y otras cosas??
+  //si
+
+  public Guitarrista (string n, string instrumento):base(n)
+  {
+    this.instrumento = instrumento;
+  }
+
+  public void IAfina()
+  {
+      Console.WriteLine("Se afina la guitarra");
+  }
+}
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //Musico musico = new Musico("Django"); (D)
+
+      Bajista b = new Bajista("Flea", "bajo");
+      Guitarrista g = new Guitarrista("Santana", "guitarra");
+
+      List<Musico> musicos = new List<Musico>();
+
+      musicos.Add(b);
+      musicos.Add(g);
+
+       foreach(Musico mu in musicos)
+        {
+          Console.WriteLine(mu as IAfina);
+        }
+
+      // (m as IAfina).Afina()
+
+      Console.ReadKey();
+    }
+  }
+}
+```
