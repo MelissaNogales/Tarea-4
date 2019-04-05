@@ -219,7 +219,7 @@ class Guitarrista: Musico
 ####        _Afina, porque es abstracto._
 
 #### _2.4. ¿Por qué no se ponen las llaves en (B)?, ¿Cuando si se pondrían?_
-####        _Porque la clase no puede hacer ese método y  las llaves se ponen cuando hay bloque de                      instruciones y los métodos son virtuales._
+####        _Porque la clase no puede hacer ese método y  las llaves se ponen cuando hay bloque de                      instrucciones y los métodos son virtuales._
 
 #### _2.5. ¿Qué pasa si el método Afina() lo hacemos virtual en lugar de abstract?_
 ####        _Marcaría error._
